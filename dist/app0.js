@@ -35,4 +35,4 @@ const { firstName: userName1, lastName: userName2, age } = person2;
 console.log(userName1);
 console.log(userName2);
 console.log(age);
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=app0.js.map

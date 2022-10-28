@@ -10,6 +10,20 @@ body {
     margin: 0;
 }
 
+#app {
+    width: 65%;
+    margin: 0 auto;
+}
+
+/* phone 手機尺寸 */
+/* 螢幕寬度小於1000px時，背景就會變成紅色 */
+@media (max-width: 800px) {
+    #app {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
 label,
 input,
 textarea {
@@ -26,7 +40,7 @@ textarea {
     font: inherit;
     padding: 0.2rem 0.4rem;
     width: 100%;
-    max-width: 30rem;
+    max-width: 100%;
     border: 1px solid #ccc;
 }
 
