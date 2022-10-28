@@ -37,3 +37,4 @@ textStorage3.addItem(10);
 textStorage3.removeItem(1);
 textStorage3.removeItem("Max");
 console.log(textStorage3.getItems());
+//# sourceMappingURL=app6.js.map

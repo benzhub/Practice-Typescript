@@ -11,3 +11,4 @@ console.log(storedData3);
 const userInput4 = undefined;
 const storedData4 = userInput4 !== null && userInput4 !== void 0 ? userInput4 : 'DEFAULT';
 console.log(storedData4);
+//# sourceMappingURL=app4.js.map

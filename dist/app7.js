@@ -48,3 +48,4 @@ Person = __decorate([
 ], Person);
 const pers = new Person();
 console.log(pers);
+//# sourceMappingURL=app7.js.map
