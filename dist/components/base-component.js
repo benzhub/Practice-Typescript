@@ -1,6 +1,7 @@
-export class Component {
+export const something = { name: "something..." };
+export default class Component {
     constructor(templateId, hostElement, insertAtStart, newElementid) {
-        this.templateElement = document.getElementById(templateId);
+        this.templateElement = (document.getElementById(templateId));
         this.hostElement = document.getElementById(hostElement);
         const importedNode = document.importNode(this.templateElement.content, true);
         this.element = importedNode.firstElementChild;
@@ -10,7 +11,7 @@ export class Component {
         this.attach(insertAtStart);
     }
     attach(insertAtBeginning) {
-        this.hostElement.insertAdjacentElement(insertAtBeginning ? 'afterbegin' : 'beforeend', this.element);
+        this.hostElement.insertAdjacentElement(insertAtBeginning ? "afterbegin" : "beforeend", this.element);
     }
 }
 //# sourceMappingURL=base-component.js.map

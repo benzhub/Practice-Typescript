@@ -1,5 +1,10 @@
+export const something = { name: "something..." };
+
 // Component Base Class
-export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
+export default abstract class Component<
+  T extends HTMLElement,
+  U extends HTMLElement
+> {
   templateElement: HTMLTemplateElement;
   hostElement: T;
   element: U;
@@ -10,9 +15,14 @@ export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
     insertAtStart: boolean,
     newElementid?: string
   ) {
-    this.templateElement = <HTMLTemplateElement>document.getElementById(templateId)!;
+    this.templateElement = <HTMLTemplateElement>(
+      document.getElementById(templateId)!
+    );
     this.hostElement = <T>document.getElementById(hostElement)!;
-    const importedNode = document.importNode(this.templateElement.content, true);
+    const importedNode = document.importNode(
+      this.templateElement.content,
+      true
+    );
     this.element = <U>importedNode.firstElementChild;
     if (newElementid) {
       this.element.id = newElementid;
@@ -22,9 +32,9 @@ export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
 
   private attach(insertAtBeginning: boolean) {
     this.hostElement.insertAdjacentElement(
-      insertAtBeginning ? 'afterbegin' : 'beforeend',
+      insertAtBeginning ? "afterbegin" : "beforeend",
       this.element
-    )
+    );
   }
 
   abstract configure(): void;
