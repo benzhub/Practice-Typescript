@@ -1,5 +1,3 @@
-export const something = { name: "something..." };
-
 // Component Base Class
 export default abstract class Component<
   T extends HTMLElement,

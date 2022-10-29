@@ -1,4 +1,4 @@
-import { ProjectStatus, Project } from '../models/project.js'
+import { ProjectStatus, Project } from "../models/project";
 
 // Project State Management
 type Listener<T> = (items: T[]) => void;
@@ -7,18 +7,18 @@ class State<T> {
   protected listeners: Listener<T>[] = [];
 
   addListener(listenerFn: Listener<T>) {
-    this.listeners.push(listenerFn)
+    this.listeners.push(listenerFn);
   }
 }
 
-export class ProjectState extends State<Project>{
+export class ProjectState extends State<Project> {
   private projects: Project[] = [];
   private static instance: ProjectState;
 
   // This is a Elegant way to do Singletons of Design Pattern.
   // The Private constructor means This Class can't make a new Object.(All data in a Object)
   private constructor() {
-    super()
+    super();
   }
 
   static getInstance() {
@@ -38,15 +38,15 @@ export class ProjectState extends State<Project>{
       ProjectStatus.Active
     );
 
-    this.projects.push(newProject)
-    this.updateListeners()
+    this.projects.push(newProject);
+    this.updateListeners();
   }
 
   moveProject(projectId: string, newStatus: ProjectStatus) {
-    const project = this.projects.find(prj => prj.id === projectId);
+    const project = this.projects.find((prj) => prj.id === projectId);
     if (project && project.status !== newStatus) {
       project.status = newStatus;
-      this.updateListeners()
+      this.updateListeners();
     }
   }
 

@@ -1,12 +1,12 @@
-// import { something } from "./base-component.js"; // if don't use default to export, need to use {} to import object.
-import Cmp from "./base-component.js"; // export default class don't use {} to import, and give a variable name to change original name(Component)
-// import { Validatable, validate } from "../utils/validation.js";
-import * as Validation from "../utils/validation.js"; // use a variable name to use import object
-import { Autobind as autoBind } from "../decorators/autobind.js";
-import { projectState } from "../state/project-state.js";
+// import { something } from "./base-component"; // if don't use default to export, need to use {} to import object.
+import Component from "./base-component"; // export default class don't use {} to import, and give a variable name to change original name(Component)
+// import { Validatable, validate } from "../utils/validation";
+import * as Validation from "../utils/validation"; // use a variable name to use import object
+import { Autobind as autoBind } from "../decorators/autobind";
+import { projectState } from "../state/project-state";
 
 // ProjectInput Class
-export class ProjectInput extends Cmp<HTMLDivElement, HTMLFormElement> {
+export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
   titleInputElement: HTMLInputElement;
   descriptionInputElement: HTMLInputElement;
   peopleInputElement: HTMLInputElement;
