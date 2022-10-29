@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/app.ts',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
     },
     devtool: 'inline-source-map',
     module: {
@@ -32,7 +32,7 @@ module.exports = {
     },
     devServer: {
         static: {
-            directory: path.resolve(__dirname, 'dist'),
+            directory: path.resolve(__dirname, 'docs'),
         },
         compress: true,
         port: 8080,
